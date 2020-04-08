@@ -1183,9 +1183,12 @@ class StarsCheck{
 	 */
 	public function ganLu($info,&$star,$key,$value){
 		$day = $info['tg'][2];
-		$map = [2,3,5,6,8,9,11,0];
+		$map = [2,3,5,6,null,null,8,9,11,0];
 		$dz = $info['dz'];
 		$find = $map[$day];
+		if(!$find){
+			return;
+		}
 		for($i = 0;$i<4;$i++){
 			if($dz[$i] == $find){
 				$star[$i][$key] = $value;

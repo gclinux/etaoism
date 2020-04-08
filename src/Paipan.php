@@ -1155,7 +1155,7 @@ class Paipan{
 		$des = ['时头','时中','时尾'];
 		$hh = intval($hh);
 		$ii = intval($ii);
-		$shi_chen = intval(($hh+1)/2);
+		$shi_chen = intval(($hh+1)/2)%12;
 		$part = 0;
 		if($hh%2){
 			//如果$hh为单数,如23点,即为时辰的上部分
