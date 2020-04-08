@@ -128,25 +128,24 @@ class StarsCheck{
     }
     /**
      *月德贵人
-     * 寅午戍月在辛7，申子辰月在丁3,
-	 * 亥卯未月在己5，巳酉丑月在乙1。
+	 *寅午戌月生者见丙2，申子辰月生者见壬8，亥卯未月生者见甲0，巳酉丑月生者见庚6。
      */
     function yueDe($info,&$star,$key,$value){
     	$tg = $info['tg'];
     	$dz = $info['dz'];
     	$map = [
-    		3,//子-丁
-    		1,//丑-乙
-    		7,//寅-辛
-    		5,//卯-己
-    		3,
-    		1,
-    		7,
-    		5,
-    		3,
-    		1,
-    		7,
-    		5
+    		8,//子-丁
+    		6,//丑-乙
+    		2,//寅-辛
+    		0,//卯-己
+    		8,//
+    		6,
+    		2,
+    		0,
+    		8,
+    		6,
+    		2,
+    		0
     	];
     	$yuede = $map[$dz[1]];
     	for($i = 0;$i<4;$i++){
@@ -361,18 +360,18 @@ class StarsCheck{
 		$day = $info['tg'][2].'-'.$info['dz'][2];
 		if(in_array($day,$map)){
 			if(in_array($info['dz'][1],$fire)){
-				$value.= '(带火)';
+				$value[1].= '(带火)';
 			}else{
-				$value.='(无火)';
+				$value[1].='(无火)';
 			}
 			$star[2][$key] = $value;
 		}else if(($info['tg'][2] == 0 or $info['tg'][2] == 1)){
 			$hour = $info['tg'][3].'-'.$info['dz'][3];
 			if(in_array($hour,$map)){
 				if(in_array($info['dz'][1],$fire)){
-					$value.= '(带火)';
+					$value[1].= '(带火)';
 				}else{
-					$value.='(无火)';
+					$value[1].='(无火)';
 				}
 			}
 			$star[2][$key] = $value;
