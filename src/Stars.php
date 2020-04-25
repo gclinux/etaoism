@@ -309,7 +309,7 @@ class StarsCheck{
 			if(in_array(1,$tg) and in_array(6,$tg)){
 				$xiu = \array_keys($tg,6,false);
 				unset($xiu[0]);
-				$xiu = array_merge($xiu,array_key($tg,7,false));
+				$xiu = array_merge($xiu,array_keys($tg,7,false));
 			}
 		}elseif(\in_array($dz[1],[11,3,7])){//亥卯未
 			if(in_array(3,$tg) && in_array(8,$tg)){
