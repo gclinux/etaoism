@@ -1421,7 +1421,7 @@ class Paipan{
 		}
 
 		foreach ($info['na_yin'] as  $nayin) {
-			$wxFen[$nayin[1]]+=$nayin[2]/10;//纳音力量低
+			$wxFen[$nayin[1]]+=$nayin[2]/20;//纳音力量低
 		}
 		$info['wx_fen'] = $wxFen;
 		//return $info;
