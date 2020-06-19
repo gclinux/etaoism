@@ -1342,7 +1342,7 @@ class Paipan{
 	       // }
 	    }
 	 	$info = (array)$ret;
-	 	$this->wuXingPingFen($info);
+	 	$info['wx_fen'] = $this->wuXingPingFen($info);
 	    return $info;
 	}
 	/**
@@ -1384,7 +1384,7 @@ class Paipan{
 	}
 
 	/*五行评分*/
-	private function wuXingPingFen(&$info){
+	public function wuXingPingFen(&$info,$noNaYin=false){
 		$wxFen = [0,0,0,0,0];
 		//$cs = [8,9,10,11,12,7,6,3,1,2,4,5];
 		foreach($info['tg'] as $tg){
@@ -1419,11 +1419,13 @@ class Paipan{
 				$wxFen[$wx]+=$fen*$fen_block[$i]/18;
 			}
 		}
-
-		foreach ($info['na_yin'] as  $nayin) {
-			$wxFen[$nayin[1]]+=$nayin[2]/20;//纳音力量低
+		if(!$noNaYin){
+			foreach ($info['na_yin'] as  $nayin) {
+				$wxFen[$nayin[1]]+=$nayin[2]/20;//纳音力量低
+			}
 		}
-		$info['wx_fen'] = $wxFen;
+		//$info['wx_fen'] = $wxFen;
+		return $wxFen;
 		//return $info;
 	}
 }
