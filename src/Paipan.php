@@ -1428,4 +1428,6 @@ class Paipan{
 		return $wxFen;
 		//return $info;
 	}
+
+	
 }

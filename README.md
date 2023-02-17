@@ -1,7 +1,8 @@
 # Efairy 
 #### 介绍
 基于PHP的算命核心
-简单演示:http://www.panyunxi.com/
+结合到web中:(thinkphp) https://github.com/gclinux/efairy
+> 可以结合到任意PHP框架中,上面只是做个例子.
 #### 软件架构
 环境要求:
 php5.3以上 ,建议使用PHP7
@@ -76,9 +77,6 @@ composer require gclinux/etaoism
 大部分情况下,调用 gclinux\Etaoism\Stars::getInfo 方法,即可.
 
 
-
-   
-
   方法: getInfo($gd, $yy, $mm, $dd, $hh, $mt=0, $ss=0){
 
 参数说明:
@@ -104,7 +102,7 @@ composer require gclinux/etaoism
 **下面内容可能会在网页上出现排版问题,建议直接看read.md文件**
 
 返回数组说明:
-`
+```
 {
 sex: 性别,0为男,1为女,
 tg: [//天干
@@ -384,4 +382,4 @@ tg: [//天干
 	],
 	},
 	],
-}`
+}```
